@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>MyContacts</h1>
+
+<form action="/api/login" method="POST">
+    {% csrf_token %}
+
+    <input type="email" name="email" placeholder="email">
+
+    <input type="password" name="password" placeholder="password">
+
+    <input type="submit" value="enviar">
+
+</form>
+
+{% endblock %}

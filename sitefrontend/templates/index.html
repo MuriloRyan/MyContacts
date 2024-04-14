@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>MyContacts</h1>
+
+<a href="/auth/register">register</a>
+
+<br>
+
+<a href="/auth/login">login</a>
+
+<br>
+
+
+<a href="/api/logoff">logoff</a>
+
+<div>
+    {% if message %}
+        <h2>{{message}}</h2>
+    {% endif %}
+</div>
+
+<div>
+    {% if login %}
+        <h2>Login: {{login}}</h2>
+    {% endif %}
+</div>
+
+{% endblock %}
