@@ -16,6 +16,3 @@ class HashUtils:
             "password": bcrypt.hashpw(password.encode('utf-8'), salt),
             "salt":salt
         }
-
-if __name__=='__main__':
-    h = HashUtils()
