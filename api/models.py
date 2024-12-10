@@ -20,3 +20,19 @@ class User(models.Model):
             'salt': self.salt,
             'creation_date': self.creation_date.strftime('%Y-%m-%d %H:%M:%S'),
         }
+
+class PhoneNumber(models.Model):
+    phone_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    nickname = models.CharField(max_length=64)
+    phone_number = models.CharField(max_length=20)
+    
+    creator = models.ForeignKey(User, on_delete=models.CASCADE)
+    creation_date = models.DateField(auto_now_add=True)
+
+    def to_dict(self):
+        return {
+            'phone_id': str(self.phone_id),
+            'nickname': self.nickname,
+            'phone_number': self.phone_number,
+            'creation_date': self.creation_date.strftime('%Y-%m-%d %H:%M:%S'),
+        }
