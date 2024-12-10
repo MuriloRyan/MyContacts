@@ -1,4 +1,6 @@
 dumb.py
+private_key.pem
+public_key.pem
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
